@@ -1,0 +1,6 @@
+# Snapshot data (moi may tu tao)
+evoto_clean/
+
+# Temp files
+*.tmp
+*.log
