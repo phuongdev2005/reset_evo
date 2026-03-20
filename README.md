@@ -1,63 +1,43 @@
 # 🔄 Evoto Multi-Account Tool Suite
 
-Bộ công cụ cho phép **dùng nhiều account Evoto** trên cùng 1 máy mà không cần cài đi cài lại.
+Dùng **nhiều account Evoto** trên cùng 1 máy, không cần cài đi cài lại.
 
 ---
 
 ## 🚀 Cách sử dụng
 
-### Lần đầu tiên (setup 1 lần):
+### Lần đầu (chạy 1 lần):
 
 ```bash
-# Bước 1: Cài Evoto
-install_evoto.bat
-
-# Bước 2: Mở Evoto lên → KHÔNG đăng nhập → Đóng Evoto
-
-# Bước 3: Chụp trạng thái sạch
-prepare_snapshot.bat
+# Xóa sạch Evoto cũ + Cài mới + Chụp snapshot (tất cả trong 1 lệnh)
+setup.bat
 ```
+
+> Script sẽ tự mở Evoto → bạn chờ load xong → **KHÔNG đăng nhập** → đóng Evoto → bấm phím tiếp tục.
 
 ### Sử dụng hàng ngày:
 
 ```bash
-# Mở Evoto → Đăng nhập Account A → Dùng xong → Đổi account:
-reset_evoto.bat
-
-# Đăng nhập Account B → Dùng xong → Đổi account:
-reset_evoto.bat
+# Đăng nhập account → dùng xong → đổi account:
+reset.bat
 ```
 
-> ⚡ Mỗi lần reset sẽ **đổi MachineGuid** → Evoto nghĩ đây là máy mới!
-
-### Xóa sạch Evoto (khi không cần nữa):
-
-```bash
-# Xóa Evoto + khôi phục MachineGuid gốc
-clean_evoto.bat
-restore_guid.bat
-```
+> ⚡ Reset ~1 giây + tự đổi MachineGuid → Evoto nghĩ máy mới!
 
 ---
 
-## 📁 Danh sách lệnh
+## 📁 File
 
-| Lệnh | Chức năng | Quyền |
+| File | Chức năng | Khi nào |
 |---|---|---|
-| `install_evoto.bat` | Cài đặt Evoto tự động | User |
-| `prepare_snapshot.bat` | Chụp trạng thái chưa đăng nhập | User |
-| `reset_evoto.bat` | Reset + đổi MachineGuid (~1s) | Admin (tự nâng) |
-| `clean_evoto.bat` | Xóa sạch Evoto khỏi máy | Admin (tự nâng) |
-| `restore_guid.bat` | Khôi phục MachineGuid gốc | Admin (tự nâng) |
+| `setup.bat` | Xóa cũ + Cài + Snapshot | 1 lần |
+| `reset.bat` | Reset + đổi GUID + mở Evoto | Mỗi khi đổi account |
 
 ---
 
-## 🔄 Cập nhật phiên bản Evoto mới
+## 🔄 Cập nhật phiên bản mới
 
 ```bash
-# 1. Đặt file installer mới (EvotoInstaller_xxx.exe) vào thư mục, xóa file cũ
-# 2. Cài lại + chụp snapshot mới:
-install_evoto.bat
-# Mở Evoto → KHÔNG đăng nhập → Đóng
-prepare_snapshot.bat
+# Thay file EvotoInstaller_xxx.exe mới, xóa cũ, chạy lại:
+setup.bat
 ```
